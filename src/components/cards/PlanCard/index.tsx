@@ -50,7 +50,7 @@ export interface PlanCardProps {
 
 const basePalette = {
   header:
-    "text-foregorund border-b border-foreground/10 mx-2",
+    "text-foreground border-b border-foreground/10 mx-2",
   price: "text-primary-700 dark:text-primary-200",
   badge:
     "bg-primary-100 text-primary-700 dark:bg-primary-950 dark:text-primary-200",
@@ -95,7 +95,7 @@ export default function PlanCard({
   return (
     <article
       className={clsx(
-        "relative flex h-full w-full max-w-full flex-col overflow-hidden",
+        "relative flex w-full max-w-full flex-col overflow-visible",
         "rounded-2xl border border-border-card bg-bg-card text-foreground shadow-sm",
         className
       )}
@@ -104,7 +104,7 @@ export default function PlanCard({
       {/* Cabeçalho com gradiente */}
       <div
         className={clsx(
-          "flex fex-col items-center justify-center p-4 gap-3 text-center",
+          "flex flex-col items-center justify-center p-4 gap-3 text-center",
           isBestOption ? "pt-9 pb-6" : "py-6",
           palette.header
         )}
@@ -132,7 +132,7 @@ export default function PlanCard({
       </div>
 
       {/* Conteúdo */}
-      <div className="flex flex-1 flex-col gap-4 px-5 py-5 sm:py-6">
+      <div className="flex flex-col gap-4 px-5 py-5 sm:py-6">
         <ul
           className={clsx(
             "space-y-2 sm:space-y-3 text-sm sm:text-base",
@@ -158,7 +158,7 @@ export default function PlanCard({
           ))}
         </ul>
 
-        <div className="mt-auto space-y-2 text-center sm:space-y-3">
+        <div className="space-y-2 text-center sm:space-y-3 pt-1">
           {subtitle ? (
             <p
               className={clsx(

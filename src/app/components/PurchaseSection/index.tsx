@@ -23,7 +23,7 @@ export default function PurchaseSection() {
         content="Adquira React Ultimate e transforme seu desenvolvimento pagando em real, não em dólar."
         className="my-4 text-center"
       />
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 justify-center">
+      <div className="grid grid-cols-1 justify-center items-start gap-4 lg:grid-cols-2 mx-auto">
         <PlanCard
           advantages={[
             "+120 componentes React prontos para uso;",
