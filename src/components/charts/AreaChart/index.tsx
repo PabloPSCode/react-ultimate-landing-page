@@ -33,6 +33,16 @@ const heightMap: Record<Size, number> = {
   lg: 320,
 };
 
+const focusResetClasses =
+  "outline-none ring-0 focus:outline-none focus-visible:outline-none active:outline-none";
+const focusResetDeepClasses =
+  "[&_.recharts-wrapper]:outline-none [&_.recharts-wrapper]:ring-0 [&_.recharts-surface]:outline-none [&_.recharts-surface]:ring-0 [&_svg]:outline-none [&_svg]:ring-0";
+const focusResetStyle: React.CSSProperties = {
+  outline: "none",
+  border: "none",
+  boxShadow: "none",
+};
+
 export type AreaChartData = AreaPoint[];
 
 export type ValueFormatter = (v: number) => string;
@@ -168,7 +178,14 @@ const Root: React.FC<AreaChartRootProps> = ({
   const Chart = (
     <RAreaChart
       data={data}
-      className={chartClassName}
+      className={clsx(
+        focusResetClasses,
+        focusResetDeepClasses,
+        chartClassName
+      )}
+      accessibilityLayer={false}
+      role="presentation"
+      style={focusResetStyle}
       margin={{ top: 16, right: 32, bottom: 16 }}
     >
       <defs>
@@ -275,14 +292,30 @@ const Root: React.FC<AreaChartRootProps> = ({
   return (
     <div
       {...rest}
-      className={clsx("w-full bg-transparent text-foreground", className)}
+      className={clsx(
+        "w-full bg-transparent text-foreground",
+        focusResetClasses,
+        focusResetDeepClasses,
+        className
+      )}
+      style={focusResetStyle}
     >
       {responsive ? (
-        <RResponsiveContainer width="100%" height={computedHeight}>
+        <RResponsiveContainer
+          width="100%"
+          height={computedHeight}
+          className={clsx(focusResetClasses, focusResetDeepClasses)}
+          style={focusResetStyle}
+        >
           {Chart}
         </RResponsiveContainer>
       ) : (
-        <div style={{ width, height: computedHeight }}>{Chart}</div>
+        <div
+          className={clsx(focusResetClasses, focusResetDeepClasses)}
+          style={{ width, height: computedHeight, ...focusResetStyle }}
+        >
+          {Chart}
+        </div>
       )}
     </div>
   );
