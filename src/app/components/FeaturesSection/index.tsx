@@ -2,7 +2,6 @@
 import RevealContainer from "@/components/animations-and-loading/RevealContainer";
 import ScrollButton from "@/components/buttons/ScrollButton";
 import InfoCard from "@/components/cards/InfoCard";
-import Paragraph from "@/components/typography/Paragraph";
 import Subtitle from "@/components/typography/Subtitle";
 import Title from "@/components/typography/Title";
 import { features } from "@/mocks/index";
@@ -10,7 +9,7 @@ import { features } from "@/mocks/index";
 export default function FeaturesSection() {
   const link = (
     <a
-      href="#documentation"
+      href="https://docs.reactultimate.pablosilvadev.com.br/"
       target="_blank"
       rel="noopener noreferrer"
       className="text-foreground text-xs sm:text-sm"

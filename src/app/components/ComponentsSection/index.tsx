@@ -9,7 +9,7 @@ import { componentCategories } from "@/mocks/index";
 export default function ComponentsSection() {
   const link = (
     <a
-      href="#documentation"
+      href="https://docs.reactultimate.pablosilvadev.com.br/"
       target="_blank"
       rel="noopener noreferrer"
       className="text-foreground text-xs sm:text-sm"

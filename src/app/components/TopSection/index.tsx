@@ -5,7 +5,7 @@ import ProductCard from "@/components/cards/ProductCard";
 import AreaChart from "@/components/charts/AreaChart";
 import CompleteTable from "@/components/tables/CompleteTable";
 import Subtitle from "@/components/typography/Subtitle";
-import { handleStartWhatsAppConversation } from "@/utils/whatsapp";
+import { handleStartWhatsAppConversation, visitDocs } from "@/utils/whatsapp";
 
 export default function TopSection() {
   return (
@@ -41,7 +41,7 @@ export default function TopSection() {
             />
             <Button
               className="w-fit rounded-md px-5 py-3 border border-primary-500 text-primary-500 font-semibold hover:bg-primary-600 hover:text-white transition mt-4"
-              onClick={handleStartWhatsAppConversation}
+              onClick={visitDocs}
               label="Ver documentação"
               variant="outlined"
             />
