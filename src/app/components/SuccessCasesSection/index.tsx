@@ -9,20 +9,20 @@ export default function TestimonialsSection() {
     {
       id: 1,
       title: "PS Code",
-      imagePath: "/project1.png",
+      imagePath: "/projects/project1.png",
       url: "https://www.pscode.com.br",
       imageSize: 400,
     },
     {
       id: 2,
       title: "Dev Schools",
-      imagePath: "/project2.png",
+      imagePath: "/projects/project2.png",
       url: "https://dev-schools-landing-page.vercel.app/",
       imageSize: 400,
     },
     {
       id: 3,
-      imagePath: "/project3.png",
+      imagePath: "/projects/project3.png",
       title: "Plataforma de marketing digital",
       url: "https://symbol-landing-page-ochre.vercel.app/",
       imageSize: 400,
@@ -30,7 +30,7 @@ export default function TestimonialsSection() {
     {
       id: 4,
       title: "Tire store",
-      imagePath: "/project4.png",
+      imagePath: "/projects/project4.png",
       url: "https://tire-store.vercel.app",
       imageSize: 400,
     },
