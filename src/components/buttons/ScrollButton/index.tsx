@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import { CaretDoubleUpIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
@@ -35,7 +35,7 @@ export default function ScrollButton({
   className,
   onClick,
   ...props
-} : ScrollButtonProps) {
+}: ScrollButtonProps) {
   const [visible, setVisible] = useState(false);
 
   // Atualiza visibilidade conforme rolagem
@@ -78,6 +78,7 @@ export default function ScrollButton({
       )}
       disabled={disabled}
       onClick={handleGoTop}
+      style={{ zIndex: 99999 }}
     >
       <div className="flex items-center gap-3">
         {icon || <CaretDoubleUpIcon size={20} />}
@@ -85,5 +86,3 @@ export default function ScrollButton({
     </button>
   );
 }
-
-
