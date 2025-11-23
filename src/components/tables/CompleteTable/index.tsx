@@ -218,18 +218,28 @@ export default function CompleteTable({
   searchClassName,
   paginationClassName,
 }: CompleteTableProps) {
+  const isBrowser = typeof window !== "undefined";
+
   const initialCols = useMemo(() => {
-    const storedCols = JSON.parse(localStorage.getItem(STORAGE_KEY) || "null");
-    if (
-      Array.isArray(storedCols) &&
-      storedCols.every((v) => typeof v === "string") &&
-      storedCols.length > 0
-    ) {
-      const valid = storedCols.filter((k) => k in (data[0] || {}));
-      if (valid.length > 0) return valid;
+    if (isBrowser) {
+      try {
+        const storedCols = JSON.parse(
+          window.localStorage.getItem(STORAGE_KEY) || "null"
+        );
+        if (
+          Array.isArray(storedCols) &&
+          storedCols.every((v) => typeof v === "string") &&
+          storedCols.length > 0
+        ) {
+          const valid = storedCols.filter((k) => k in (data[0] || {}));
+          if (valid.length > 0) return valid;
+        }
+      } catch {
+        /* ignore and fallback below */
+      }
     }
     return data[0] ? Object.keys(data[0]) : [];
-  }, [data]);
+  }, [data, isBrowser]);
 
   const [cols, setCols] = useState<string[]>(initialCols);
   const [sort, setSort] = useState<Sort>({ key: null, dir: "asc" });
@@ -276,12 +286,12 @@ export default function CompleteTable({
 
   // INIT saved order
   useEffect(() => {
-    if (!saveColumnsOrder) {
+    if (!saveColumnsOrder || !isBrowser) {
       setCols(initialCols);
       return;
     }
     try {
-      const raw = localStorage.getItem(STORAGE_KEY);
+      const raw = window.localStorage.getItem(STORAGE_KEY);
       if (!raw) {
         setCols(initialCols);
         return;
@@ -299,14 +309,14 @@ export default function CompleteTable({
     } catch {
       setCols(initialCols);
     }
-  }, [initialCols, saveColumnsOrder]);
+  }, [initialCols, saveColumnsOrder, isBrowser]);
 
   // SAVE order
   useEffect(() => {
-    if (!saveColumnsOrder) return;
+    if (!saveColumnsOrder || !isBrowser) return;
     const valid = cols.every((k) => initialCols.includes(k));
-    if (valid) localStorage.setItem(STORAGE_KEY, JSON.stringify(cols));
-  }, [cols, initialCols, saveColumnsOrder]);
+    if (valid) window.localStorage.setItem(STORAGE_KEY, JSON.stringify(cols));
+  }, [cols, initialCols, saveColumnsOrder, isBrowser]);
 
   useEffect(() => onColumnsChange?.(cols), [cols, onColumnsChange]);
 
@@ -425,7 +435,7 @@ export default function CompleteTable({
 
   return (
     <DndProvider backend={HTML5Backend}>
-      <div className="w-full rounded-xl border border-foreground/10 bg-background text-foreground shadow-sm">
+      <div className="w-full rounded-xl bg-bg-card border border-border-card text-foreground shadow-sm">
         {/* Top bar: Selection/Search + NEW sorter */}
         <div className="flex flex-wrap items-center justify-between gap-2 px-3 py-2">
           {/* Left: selection count + search */}
@@ -727,5 +737,3 @@ export default function CompleteTable({
     </DndProvider>
   );
 }
-
-

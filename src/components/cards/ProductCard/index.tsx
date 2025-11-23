@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
-import Image from "next/image";
 import { formatBRL } from "@/utils/format";
 import { ShoppingCartIcon, StarIcon, TimerIcon } from "@phosphor-icons/react";
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import clsx from "clsx";
+import Image from "next/image";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 type Rating = 0 | 1 | 2 | 3 | 4 | 5;
 
@@ -42,6 +43,8 @@ interface ProductCardProps {
    * - Ex.: "2025-12-31T23:59:59.000Z"
    */
   dealEndsWithIn?: string;
+  /** Classes CSS adicionais para customização do estilo do card. */
+  className?: string;
 }
 
 /**
@@ -64,6 +67,7 @@ export default function ProductCard({
   showDeal,
   dealPrice,
   dealEndsWithIn,
+  className,
 }: ProductCardProps) {
   // === Preços formatados ===
   const formattedBasePrice = formatBRL(price);
@@ -149,10 +153,10 @@ export default function ProductCard({
 
   return (
     <div
-      className="
-        group flex flex-col rounded-xl bg-bg-card border-border-card border bg-card shadow-sm
-        p-3 sm:p-4 gap-2 max-w-full w-full
-      "
+      className={clsx(
+        "        group flex flex-col rounded-xl bg-bg-card border-border-card border bg-card shadow-sm    p-3 sm:p-4 gap-2 max-w-full w-full      ",
+        className
+      )}
       role="article"
       aria-label={`Produto: ${title}`}
       onClick={() => onSeeProductDetails?.()}
@@ -171,7 +175,7 @@ export default function ProductCard({
             alt={title}
             width={400}
             height={300}
-            className="h-full w-auto object-contain transition-transform duration-200 group-hover:scale-[1.02]"
+            className="h-full w-auto object-contain transition-transform duration-200"
           />
         </div>
       </div>
@@ -250,11 +254,10 @@ export default function ProductCard({
           mt-auto inline-flex items-center justify-center gap-2
           rounded-md px-3 py-2 sm:px-4 sm:py-2.5
           text-white text-sm sm:text-base font-medium transition
-          focus:outline-none focus:ring-2 focus:ring-offset-2
           ${
             showDeal && dealExpired
               ? "bg-gray-400 cursor-not-allowed"
-              : "bg-primary-600 hover:bg-primary-700 focus:ring-primary-400"
+              : "bg-primary-600"
           }
         `}
         aria-label={`${ctaLabel} - ${title}`}
@@ -269,6 +272,5 @@ export default function ProductCard({
     </div>
   );
 }
-
 
 export type { ProductCardProps };

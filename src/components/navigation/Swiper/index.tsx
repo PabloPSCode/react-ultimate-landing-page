@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
 import { ArrowLeftIcon, ArrowRightIcon } from "@phosphor-icons/react";
 import clsx from "clsx";
 import React, { useMemo, useRef, useState } from "react";
 import type { Swiper as SwiperType } from "swiper/bundle";
-import { A11y, Grid, Navigation } from "swiper/modules";
+import { A11y, Autoplay, Grid, Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
@@ -43,6 +43,7 @@ export interface CarouselProps<T = unknown> {
   className?: string;
   /** Callback no slide change. */
   onSlideChange?: (swiper: SwiperType) => void;
+  autoPlay?: boolean;
 }
 
 /**
@@ -79,6 +80,7 @@ export default function Carousel<T>({
   breakpoints,
   className,
   onSlideChange,
+  autoPlay = false,
 }: CarouselProps<T>) {
   const prevRef = useRef<HTMLButtonElement | null>(null);
   const nextRef = useRef<HTMLButtonElement | null>(null);
@@ -100,14 +102,7 @@ export default function Carousel<T>({
 
   return (
     <>
-      {title && (
-        <h3 className="flex sm:hidden text-base sm:text-lg md:text-xl font-semibold text-foreground w-full text-left mb-4">
-          {title}
-        </h3>
-      )}
-      <div
-        className={clsx("w-full flex flex-col-reverse sm:flex-col", className)}
-      >
+      <div className={clsx("w-full flex flex-col", className)}>
         {title && (
           <div className="w-full mb-4 flex sm:items-center justify-between">
             <h3 className="w-full hidden sm:flex text-base sm:text-lg md:text-xl font-semibold text-foreground">
@@ -148,7 +143,9 @@ export default function Carousel<T>({
         )}
 
         <Swiper
-          modules={[Grid, Navigation, A11y]}
+          autoplay={autoPlay}
+          autoHeight
+          modules={[Grid, Navigation, A11y, Autoplay]}
           // grid/base
           grid={{ rows, fill: "row" }}
           slidesPerView={slidesPerView}

@@ -3,10 +3,28 @@ import type { PhotoVisualizerProps } from "@/components/media/PhotoVisualizer";
 import { Product } from "@/components/navigation/Cart/components/CartItem";
 import type { TopMenuProps } from "@/components/navigation/TopMenu";
 import {
+  BellIcon,
+  BookOpenIcon,
+  BrowsersIcon,
+  CameraIcon,
+  ChartLineUpIcon,
+  CompassIcon,
+  CubeIcon,
+  CursorClickIcon,
   DeviceMobileIcon,
   FanIcon,
+  FileCssIcon,
+  FileTsIcon,
+  HeadsetIcon,
+  LayoutIcon,
   LightningIcon,
+  PaintBrushIcon,
+  PlusCircleIcon,
+  SneakerMoveIcon,
+  SquaresFourIcon,
   TelevisionIcon,
+  TextAaIcon,
+  TextboxIcon,
 } from "@phosphor-icons/react";
 
 export const productCardItemURL =
@@ -953,5 +971,191 @@ export const mockedAddresses: Address[] = [
     state: "RJ",
     zipCode: "76543-210",
     country: "Brasil",
+  },
+];
+
+export const menuItems = [
+  {
+    label: "Recursos",
+    href: "#recursos",
+  },
+  {
+    label: "Componentes",
+    href: "#componentes",
+  },
+  {
+    label: "Documentação",
+    href: "#documentacao",
+  },
+  {
+    label: "Cases de sucesso",
+    href: "#cases",
+  },
+];
+
+export const features = [
+  {
+    id: "1",
+    title: "Mais de 120 componentes",
+    description:
+      "Componentes extremamente versáteis e personalizáveis para todas as suas necessidades. Construa qualquer interface com uma facilidade absurda.",
+    icon: <CubeIcon size={32} className="text-primary-500" />,
+  },
+  {
+    id: "2",
+    title: "Totalmente personalizável",
+    description:
+      "Altere cores, fontes, espaçamentos e muito mais com poucas linhas de código. Adapte a biblioteca ao seu design system ou crie o seu próprio do zero.",
+    icon: <PaintBrushIcon size={32} className="text-primary-500" />,
+  },
+  {
+    id: "3",
+    title: "Tailwind CSS",
+    description:
+      "Construído com Tailwind CSS, aproveite a flexibilidade e poder dessa incrível ferramenta para criar interfaces modernas e responsivas com facilidade.",
+    icon: <FileCssIcon size={32} className="text-primary-500" />,
+  },
+  {
+    id: "4",
+    title: "Construída com Typescript",
+    description:
+      "Desfrute dos benefícios do Typescript, como tipagem estática e autocompletar, para aumentar sua produtividade e reduzir erros durante o desenvolvimento.",
+    icon: <FileTsIcon size={32} className="text-primary-500" />,
+  },
+
+  {
+    id: "6",
+    title: "Documentação completa",
+    description:
+      "Acesse uma documentação detalhada com exemplos práticos, guias de uso e melhores práticas para tirar o máximo proveito da biblioteca em seus projetos.",
+    icon: <BookOpenIcon size={32} className="text-primary-500" />,
+  },
+  {
+    id: "6",
+    title: "Suporte e atualizações",
+    description:
+      "Conte com atualizações constantes, melhorias e suporte dedicado para garantir que sua experiência com a biblioteca seja sempre a melhor possível.",
+    icon: <HeadsetIcon size={32} className="text-primary-500" />,
+  },
+];
+
+export const componentCategories = [
+  {
+    id: "1",
+    title: "Componentes de Ecommerce",
+    description:
+      "Carrinhos de compra, listas de produtos, resumo de ordens e muito mais.",
+    icon: <CursorClickIcon size={32} className="text-blue-500" />,
+  },
+  {
+    id: "2",
+    title: "Formulários e inputs",
+    description: "Campos de texto, selects, uploads e com validações.",
+    icon: <TextboxIcon size={32} className="text-red-500" />,
+  },
+  {
+    id: "3",
+    title: "Navegação",
+    description:
+      "Menus, breadcrumbs, abas e sidebars que guiam o usuário sem fricção.",
+    icon: <CompassIcon size={32} className="text-pink-500" />,
+  },
+  {
+    id: "4",
+    title: "Cards e listagens",
+    description:
+      "Cards responsivos, listas e grids para apresentar produtos, posts ou dados.",
+    icon: <SquaresFourIcon size={32} className="text-orange-500" />,
+  },
+  {
+    id: "5",
+    title: "Dados e gráficos",
+    description:
+      "Tabelas, métricas e componentes visuais que deixam dashboards legíveis.",
+    icon: <ChartLineUpIcon size={32} className="text-sky-500" />,
+  },
+  {
+    id: "6",
+    title: "Media",
+    description:
+      "Visualizadores de imagens, vídeos e galerias com controles intuitivos.",
+    icon: <CameraIcon size={32} className="text-gray-500" />,
+  },
+  {
+    id: "7",
+    title: "Modais e overlays",
+    description:
+      "Modais e popovers com animações suaves e acessibilidade garantida.",
+    icon: <BrowsersIcon size={32} className="text-teal-500" />,
+  },
+  {
+    id: "8",
+    title: "Animações e efeitos",
+    description:
+      "Containers animados, spinners e mais para melhorar a experiência do usuário.",
+    icon: <SneakerMoveIcon size={32} className="text-sky-500" />,
+  },
+  {
+    id: "9",
+    title: "Tipografia e textos",
+    description:
+      "Títulos, parágrafos, e elementos textuais para uma comunicação clara e eficaz.",
+    icon: <TextAaIcon size={32} className="text-amber-500" />,
+  },
+  {
+    id: "10",
+    title: "Indicadores e status",
+    description:
+      "Indicadores de progresso, badges e alertas para manter o usuário informado.",
+    icon: <BellIcon size={32} className="text-yellow-500" />,
+  },
+  {
+    id: "11",
+    title: "Elementos de layout",
+    description:
+      "Headers, footers, sections e outros componentes para estruturar suas páginas.",
+    icon: <LayoutIcon size={32} className="text-orange-500" />,
+  },
+  {
+    id: "12",
+    title: "E muito mais",
+    description:
+      "Timeline, banners, carrosséis, rich text editor, componentes para blogs e vários outros componentes.",
+    icon: <PlusCircleIcon size={32} className="text-primary-500" />,
+  },
+];
+
+export const testimonials = [
+  {
+    id: 1,
+    subtitle:
+      "Me surpreendi com a qualidade e a rapidez em que montei minhas telas. Utilizando IA então foi ainda mais fácil e rápido. Recomendo demais!",
+    title: "Bruno Veloso",
+    rating: 5,
+    avatarUrl: "/profiles/profile1.png",
+  },
+  {
+    id: 2,
+    subtitle:
+      "Tem componente de sobra nessa biblioteca. Nunca vi uma biblioteca com tantos componentes e como uma qualidade e versatilidade fora do comum. Top...",
+    title: "Leozinho Dev",
+    rating: 5,
+    avatarUrl: "/profiles/profile3.png",
+  },
+  {
+    id: 3,
+    subtitle:
+      "Biblioteca top demais, salvou meu projeto! Ainda mais com pagamento em BRL ao invés de dólar.",
+    title: "Breno Santos",
+    rating: 5,
+    avatarUrl: "/profiles/profile2.png",
+  },
+  {
+    id: 4,
+    subtitle:
+      "Adquiri a React Ultimate para um projeto pessoal e foi a melhor decisão que tomei. A velocidade de desenvolvimento aumentou muito! A integração com o Codex foi surreal.",
+    title: "Ludimila Ferreira",
+    rating: 5,
+    avatarUrl: "/profiles/profile4.png",
   },
 ];

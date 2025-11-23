@@ -32,7 +32,7 @@ export default function InfoCard({
           : itemsPosition === "right"
           ? "items-end"
           : "items-center"
-      } p-4 gap-2 bg-bg-card border-border-card border bg-card rounded-lg shadow`}
+      } p-4 gap-2 bg-bg-card border-border-card border bg-card rounded-lg shadow h-full`}
     >
       <div className="mb-4 text-2xl">{icon}</div>
       <div
