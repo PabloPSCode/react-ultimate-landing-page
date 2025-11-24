@@ -48,7 +48,7 @@ export default function TopSection() {
           </div>
         </div>
 
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 p-8">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 gap-4 p-7">
           <div className="lg:col-span-2">
             <CompleteTable
               countableColumnsName={[
