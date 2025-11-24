@@ -16,8 +16,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "React Ultimate - Biblioteca de Componentes React",
-  description:
-    "Acelere seu desenvolvimento com React Ultimate, a biblioteca definitiva de componentes React para criar interfaces incríveis com facilidade e rapidez.",
+  description: "Acelere seu desenvolvimento com React Ultimate, a biblioteca definitiva de componentes React para criar interfaces incríveis com facilidade e rapidez.",
   keywords: [
     "React Ultimate",
     "biblioteca de componentes React",
