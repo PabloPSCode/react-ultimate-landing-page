@@ -3,8 +3,10 @@
 import LandingFooter from "@/components/elements/Footer";
 import { menuItems } from "@/mocks";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
+  const pathname = usePathname();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -21,7 +23,14 @@ export default function Footer() {
             />
           }
         />
-        <LandingFooter.Column items={menuItems} title="Empresa" />
+        <LandingFooter.Column
+          items={
+            pathname !== "/"
+              ? menuItems.map((item) => ({ ...item, href: `/${item.href}` }))
+              : menuItems
+          }
+          title="Empresa"
+        />
       </LandingFooter.Top>
       <LandingFooter.Bottom>
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">

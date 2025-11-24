@@ -5,9 +5,11 @@ import useTheme from "@/hooks/useTheme";
 import { menuItems } from "@/mocks";
 import { MoonIcon, SunIcon } from "@phosphor-icons/react";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 export default function Header() {
+  const pathname = usePathname();
   const { theme, setTheme } = useTheme();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
@@ -31,7 +33,10 @@ export default function Header() {
           <ul>
             {menuItems.map((item) => (
               <li key={item.href} className="inline-block mx-2">
-                <a href={item.href} className="text-sm sm:text-base">
+                <a
+                  href={pathname !== "/" ? `/${item.href}` : item.href}
+                  className="text-sm sm:text-base"
+                >
                   {item.label}
                 </a>
               </li>
