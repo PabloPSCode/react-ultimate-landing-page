@@ -1,19 +1,20 @@
-'use client';
+"use client";
 
+import applyGoogleTranslateDOMPatch from "@/utils/applyGoogleTranslateDOMPatch";
 // BarChart.tsx
 import clsx from "clsx";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Bar as RBar,
   BarChart as RBarChart,
   CartesianGrid as RCartesianGrid,
+  Cell as RCell,
   Legend as RLegend,
   ReferenceLine as RReferenceLine,
   ResponsiveContainer as RResponsiveContainer,
   Tooltip as RTooltip,
   XAxis as RXAxis,
   YAxis as RYAxis,
-  Cell as RCell,
 } from "recharts";
 
 /* =========================
@@ -114,8 +115,8 @@ export interface BarChartRootProps
   labelFormatter?: LabelFormatter;
 
   /** Estilo das barras */
-  color?: string;          // cor principal
-  barSize?: number;        // largura/altura da barra
+  color?: string; // cor principal
+  barSize?: number; // largura/altura da barra
   barRadius?: number | [number, number, number, number]; // raio dos cantos
 
   /** Classes */
@@ -145,6 +146,10 @@ const Root: React.FC<BarChartRootProps> = ({
   children,
   ...rest
 }) => {
+  useEffect(() => {
+    applyGoogleTranslateDOMPatch();
+  }, []);
+
   const computedHeight = height ?? heightMap[size];
   const fillColor = color ?? "var(--color-primary-500, #3b82f6)";
   const strokeColor = color ?? "var(--color-primary-600, #2563eb)";
@@ -282,7 +287,11 @@ const Root: React.FC<BarChartRootProps> = ({
       )}
 
       {legend && (
-        <RLegend verticalAlign="top" height={36} content={LegendContent as never} />
+        <RLegend
+          verticalAlign="top"
+          height={36}
+          content={LegendContent as never}
+        />
       )}
 
       <RBar
@@ -335,11 +344,21 @@ const CartesianGrid: React.FC<React.ComponentProps<typeof RCartesianGrid>> = (
 );
 
 const XAxis: React.FC<React.ComponentProps<typeof RXAxis>> = (props) => (
-  <RXAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "currentColor" }} {...props} />
+  <RXAxis
+    axisLine={false}
+    tickLine={false}
+    tick={{ fontSize: 12, fill: "currentColor" }}
+    {...props}
+  />
 );
 
 const YAxis: React.FC<React.ComponentProps<typeof RYAxis>> = (props) => (
-  <RYAxis axisLine={false} tickLine={false} tick={{ fontSize: 12, fill: "currentColor" }} {...props} />
+  <RYAxis
+    axisLine={false}
+    tickLine={false}
+    tick={{ fontSize: 12, fill: "currentColor" }}
+    {...props}
+  />
 );
 
 const Bar: React.FC<React.ComponentProps<typeof RBar>> = (props) => (
