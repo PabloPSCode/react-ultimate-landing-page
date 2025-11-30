@@ -2,10 +2,16 @@
 import SplittedText from "@/components/animations-and-loading/SplittedText";
 import PlanCard from "@/components/cards/PlanCard";
 import Subtitle from "@/components/typography/Subtitle";
+import { useStripe } from "@/hooks/useStripe";
 
 export default function PurchaseSection() {
+  const { createStripeCheckout } = useStripe();
+
   return (
-    <section className="flex flex-col items-center max-w-7xl mx-auto gap-4 py-8 px-4 my-8 scroll-mt-12 sm:scroll-mt-14">
+    <section
+      className="flex flex-col items-center max-w-7xl mx-auto gap-4 py-8 px-4 my-8 scroll-mt-12 sm:scroll-mt-14"
+      id="adquirir-react-ultimate"
+    >
       <SplittedText
         className="text-3xl md:text-5xl font-extrabold tracking-tight text-foreground"
         delay={80}
@@ -38,6 +44,7 @@ export default function PurchaseSection() {
           className="max-w-lg"
           priceNote="Pagamento único"
           buttonLabel="Adquirir React Ultimate"
+          onPurchaseClick={() => createStripeCheckout("solo")}
         />
         <PlanCard
           advantages={[
@@ -55,6 +62,7 @@ export default function PurchaseSection() {
           priceNote="Pagamento único"
           buttonLabel="Adquirir React Ultimate"
           isBestOption
+          onPurchaseClick={() => createStripeCheckout("team")}
         />
       </div>
     </section>

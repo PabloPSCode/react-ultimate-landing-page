@@ -1,5 +1,4 @@
 "use client";
-import Button from "@/components/buttons/Button";
 import LandingHeader from "@/components/elements/LandingHeader";
 import useTheme from "@/hooks/useTheme";
 import { menuItems } from "@/mocks";
@@ -45,11 +44,12 @@ export default function Header() {
         </nav>
       </LandingHeader.Center>
       <LandingHeader.Right>
-        <Button
-          label="Adquirir React Ultimate"
-          className="bg-primary-500 text-white font-bold mr-8"
-          onClick={() => console.log("Comprar React Ultimate")}
-        />
+        <a
+          className="w-fit rounded-md px-5 py-3 bg-primary-500 text-white font-semibold shadow-lg hover:bg-primary-600 transition mt-4"
+          href="#adquirir-react-ultimate"
+        >
+          Adquirir React Ultimate
+        </a>
         <button
           className="text-foreground"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

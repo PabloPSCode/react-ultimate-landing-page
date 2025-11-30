@@ -5,7 +5,7 @@ import ProductCard from "@/components/cards/ProductCard";
 import AreaChart from "@/components/charts/AreaChart";
 import CompleteTable from "@/components/tables/CompleteTable";
 import Subtitle from "@/components/typography/Subtitle";
-import { handleStartWhatsAppConversation, visitDocs } from "@/utils/whatsapp";
+import { visitDocs } from "@/utils/whatsapp";
 
 export default function TopSection() {
   return (
@@ -34,11 +34,12 @@ export default function TopSection() {
             className="text-left text-gray-800"
           />
           <div className="w-full flex gap-8">
-            <Button
+            <a
               className="w-fit rounded-md px-5 py-3 bg-primary-500 text-white font-semibold shadow-lg hover:bg-primary-600 transition mt-4"
-              onClick={handleStartWhatsAppConversation}
-              label="Adquirir React Ultimate"
-            />
+              href="#adquirir-react-ultimate"
+            >
+              Adquirir React Ultimate
+            </a>
             <Button
               className="w-fit rounded-md px-5 py-3 border border-primary-500 text-primary-500 font-semibold hover:bg-primary-600 hover:text-white transition mt-4"
               onClick={visitDocs}
