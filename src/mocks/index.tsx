@@ -991,6 +991,10 @@ export const menuItems = [
     label: "Cases de sucesso",
     href: "#cases",
   },
+  {
+    label: "Já sou cliente",
+    href: "/ja-sou-cliente",
+  },
 ];
 
 export const features = [

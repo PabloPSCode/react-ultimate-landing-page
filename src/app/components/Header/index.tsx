@@ -45,7 +45,7 @@ export default function Header() {
       </LandingHeader.Center>
       <LandingHeader.Right>
         <a
-          className="w-fit rounded-md px-5 py-3 bg-primary-500 text-white font-semibold shadow-lg hover:bg-primary-600 transition mt-4"
+          className="w-fit rounded-md text-primary-500 font-semibold mr-8"
           href="#adquirir-react-ultimate"
         >
           Adquirir React Ultimate
