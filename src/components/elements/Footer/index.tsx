@@ -123,6 +123,7 @@ const Column: React.FC<ColumnProps> = ({
                 <a
                   href={it.href}
                   target={it.target}
+                  rel={it.target === "_blank" ? "noopener noreferrer" : undefined}
                   className="text-foreground/80 text-xs sm:text-sm hover:text-foreground underline-offset-4 hover:underline"
                 >
                   {it.label}

@@ -41,6 +41,8 @@ export default function Header() {
               <li key={item.href} className="inline-block mx-2">
                 <a
                   href={resolveHref(item.href)}
+                  target={item.target}
+                  rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
                   className="text-sm sm:text-base"
                 >
                   {item.label}
@@ -77,7 +79,12 @@ export default function Header() {
                 className="inline-block mx-2 mb-2"
                 onClick={handleToggleMobileMenu}
               >
-                <a href={resolveHref(item.href)} className="text-sm sm:text-base">
+                <a
+                  href={resolveHref(item.href)}
+                  target={item.target}
+                  rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+                  className="text-sm sm:text-base"
+                >
                   {item.label}
                 </a>
               </li>
