@@ -95,13 +95,13 @@ export default function TopSection() {
             />
           </div>
           <ProductCard
-            imageUrl="https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages8.kabum.com.br%2Fprodutos%2Ffotos%2F520368%2Fprocessador-amd-ryzen-5-5600gt-3-6-ghz-4-6ghz-max-turbo-cache-4mb-6-nucleos-12-threads-am4-100-100001488box_1708024586_gg.jpg&w=640&q=75"
-            installmentValue={33.33}
-            installments={3}
+            imageUrl="https://images2.kabum.com.br/produtos/fotos/426262/processador-amd-ryzen-7-7800x3d-5-0ghz-max-turbo-cache-104mb-am5-8-nucleos-video-integrado-100-100000910wof_1680784502_gg.jpg"
+            installmentValue={179.90}
+            installments={10}
             onAddToCart={() => {}}
-            price={799.99}
-            rating={4}
-            title="Processador AMD Ryzen 7 5700G, 3.8GHz (4.6GHz Max Turbo), AM4"
+            price={1799.9}
+            rating={5}
+            title="Processador AMD Ryzen 7 7800X3D, 5.0GHz Max Turbo, Cache 104MB, AM5, 8 Núcleos"
             className="col-span-1"
           />
           <div className="w-full p-4 pb-0 bg-bg-card border border-border-card h-fit rounded-md shadow-sm">

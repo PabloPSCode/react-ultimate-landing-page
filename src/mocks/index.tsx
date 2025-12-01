@@ -640,10 +640,10 @@ export const avatarImagePlaceholder = "https://i.pravatar.cc/120";
 export const productsCardsSwiper = [
   {
     id: 1,
-    title: "Processador Ryzen 5 5600G",
+    title: "Processador AMD Ryzen 7 7800X3D, 5.0GHz Max Turbo, Cache 104MB, AM5, 8 Núcleos",
     image:
-      "https://www.kabum.com.br/_next/image?url=https%3A%2F%2Fimages8.kabum.com.br%2Fprodutos%2Ffotos%2F520368%2Fprocessador-amd-ryzen-5-5600gt-3-6-ghz-4-6ghz-max-turbo-cache-4mb-6-nucleos-12-threads-am4-100-100001488box_1708024586_gg.jpg&w=640&q=75",
-    price: 799.9,
+      "https://images2.kabum.com.br/produtos/fotos/426262/processador-amd-ryzen-7-7800x3d-5-0ghz-max-turbo-cache-104mb-am5-8-nucleos-video-integrado-100-100000910wof_1680784502_gg.jpg",
+    price: 1799.9,
     oldPrice: 999.9,
     discount: 20,
   },
