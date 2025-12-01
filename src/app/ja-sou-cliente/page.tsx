@@ -30,9 +30,9 @@ export default function Client() {
     return sanitizedEmail.includes("@") && sanitizedEmail.includes(".");
   }, [sanitizeEmail]);
 
-  const handleDownloadNextJSPack = (checkoutSessionId: string) => {
+  const handleNavigateToDownloadPage = (checkoutSessionId: string) => {
     if (typeof window !== "undefined") {
-      window.open(`/success?checkoutSessionId=${checkoutSessionId}&recovery=true`, "_blank");
+      window.location.href = `/success?checkoutSessionId=${checkoutSessionId}&recovery=true`;
     }
   };
 
@@ -46,7 +46,7 @@ export default function Client() {
 
     const userCheckoutSessionId = await fetchUserCheckoutSession(sanitizedEmail);
     if (userCheckoutSessionId) {
-      handleDownloadNextJSPack(userCheckoutSessionId);
+      handleNavigateToDownloadPage(userCheckoutSessionId);
       return;
     }
     showToastError("Nenhuma assinatura válida encontrada para o email informado.", { position: "top-center" });
