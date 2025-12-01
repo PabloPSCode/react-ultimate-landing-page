@@ -13,7 +13,7 @@ import Header from "../components/Header";
 export default function Client() {
   const [userEmail, setUserEmail] = useState<string>("");
 
-  const { fetchUserValid } = useFireStore();
+  const { fetchUserCheckoutSession } = useFireStore();
 
   const sanitizeEmail = useCallback(() => {
     const normalized = userEmail.trim().toLowerCase();
@@ -30,9 +30,9 @@ export default function Client() {
     return sanitizedEmail.includes("@") && sanitizedEmail.includes(".");
   }, [sanitizeEmail]);
 
-  const handleDownloadNextJSPack = (email: string) => {
+  const handleDownloadNextJSPack = (checkoutSessionId: string) => {
     if (typeof window !== "undefined") {
-      window.open(`/success?email=${email}`, "_blank");
+      window.open(`/success?checkoutSessionId=${checkoutSessionId}&recovery=true`, "_blank");
     }
   };
 
@@ -44,9 +44,9 @@ export default function Client() {
       return;
     }
 
-    const isValid = await fetchUserValid(sanitizedEmail);
-    if (isValid) {
-      handleDownloadNextJSPack(sanitizedEmail);
+    const userCheckoutSessionId = await fetchUserCheckoutSession(sanitizedEmail);
+    if (userCheckoutSessionId) {
+      handleDownloadNextJSPack(userCheckoutSessionId);
       return;
     }
     showToastError("Nenhuma assinatura válida encontrada para o email informado.", { position: "top-center" });

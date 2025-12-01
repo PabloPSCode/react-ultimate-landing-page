@@ -1,5 +1,5 @@
 export const useFireStore = () => {
-  const fetchUserValid = async (userEmail: string) => {
+  const fetchUserCheckoutSession = async (userEmail: string) => {
     const response = await fetch("/api/firestore/fetch-user", {
       method: "POST",
       headers: {
@@ -17,5 +17,5 @@ export const useFireStore = () => {
     return isUserPaidSubscription;
   };
 
-  return { fetchUserValid };
+  return { fetchUserCheckoutSession };
 };
