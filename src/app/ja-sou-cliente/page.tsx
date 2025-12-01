@@ -64,7 +64,7 @@ export default function Client() {
             label="Informe o e-mail utilizado na compra"
             onChange={(val) => setUserEmail(val.target.value)}
             placeholder="joaosilva@gmail.com"
-            containerClassName="-mb-1"
+            containerClassName="-mb-[3.5px]"
           />
           <Button
             label="Pesquisar email"

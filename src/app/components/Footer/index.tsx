@@ -9,6 +9,13 @@ export default function Footer() {
   const pathname = usePathname();
   const currentYear = new Date().getFullYear();
 
+  const resolveHref = (href: string) => {
+    if (href.startsWith("#")) {
+      return pathname === "/" ? href : `/${href}`;
+    }
+    return href;
+  };
+
   return (
     <LandingFooter.Root>
       <LandingFooter.Top columns={3}>
@@ -24,11 +31,10 @@ export default function Footer() {
           }
         />
         <LandingFooter.Column
-          items={
-            pathname !== "/"
-              ? menuItems.map((item) => ({ ...item, href: `/${item.href}` }))
-              : menuItems
-          }
+          items={menuItems.map((item) => ({
+            ...item,
+            href: resolveHref(item.href),
+          }))}
           title="Empresa"
         />
       </LandingFooter.Top>

@@ -985,7 +985,7 @@ export const menuItems = [
   },
   {
     label: "Documentação",
-    href: "#documentacao",
+    href: "https://docs.reactultimate.pablosilvadev.com.br",
   },
   {
     label: "Cases de sucesso",

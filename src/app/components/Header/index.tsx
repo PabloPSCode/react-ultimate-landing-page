@@ -12,6 +12,13 @@ export default function Header() {
   const { theme, setTheme } = useTheme();
   const [showMobileMenu, setShowMobileMenu] = useState(false);
 
+  const resolveHref = (href: string) => {
+    if (href.startsWith("#")) {
+      return pathname === "/" ? href : `/${href}`;
+    }
+    return href;
+  };
+
   const handleToggleMobileMenu = () => {
     setShowMobileMenu(!showMobileMenu);
   };
@@ -33,7 +40,7 @@ export default function Header() {
             {menuItems.map((item) => (
               <li key={item.href} className="inline-block mx-2">
                 <a
-                  href={pathname !== "/" ? `/${item.href}` : item.href}
+                  href={resolveHref(item.href)}
                   className="text-sm sm:text-base"
                 >
                   {item.label}
@@ -70,7 +77,7 @@ export default function Header() {
                 className="inline-block mx-2 mb-2"
                 onClick={handleToggleMobileMenu}
               >
-                <a href={item.href} className="text-sm sm:text-base">
+                <a href={resolveHref(item.href)} className="text-sm sm:text-base">
                   {item.label}
                 </a>
               </li>
