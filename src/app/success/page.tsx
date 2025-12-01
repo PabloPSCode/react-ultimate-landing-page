@@ -12,8 +12,8 @@ function SuccessContent() {
   const searchParams = useSearchParams();
   const [sessionId, setSessionId] = useState<string | null>(null);
 
-  const nextjsRepositoryLink = process.env.NEXT_PUBLIC_NEXTJS_REPOSITORY_LINK;
-  const viteRepositoryLink = process.env.NEXT_PUBLIC_VITE_REPOSITORY_LINK;
+  const nextjsRepositoryLink = process.env.NEXT_PUBLIC_STABLE_REACT_NEXT_LIB_DOWNLOAD_URL;
+  const viteRepositoryLink = process.env.NEXT_PUBLIC_STABLE_REACT_VITE_LIB_DOWNLOAD_URL;
   const isRecovery = searchParams?.get("recovery");
 
   useEffect(() => {
