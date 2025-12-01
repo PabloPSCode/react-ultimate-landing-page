@@ -1,18 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
-//@ts-ignore
 import "../styles/globals.css";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "React Ultimate - Biblioteca de Componentes React",
@@ -61,11 +48,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className="notranslate" translate="no">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

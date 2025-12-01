@@ -4,11 +4,11 @@ import Phrase from "@/components/typography/Phrase";
 import Subtitle from "@/components/typography/Subtitle";
 import Title from "@/components/typography/Title";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useMemo, useState } from "react";
+import { Suspense, useEffect, useMemo, useState } from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-export default function Success() {
+function SuccessContent() {
   const searchParams = useSearchParams();
   const [sessionId, setSessionId] = useState<string | null>(null);
 
@@ -77,5 +77,19 @@ export default function Success() {
       </div>
       <Footer />
     </div>
+  );
+}
+
+export default function Success() {
+  return (
+    <Suspense
+      fallback={
+        <div className="w-full min-h-screen flex items-center justify-center bg-background">
+          <Phrase content="Carregando os detalhes da compra..." />
+        </div>
+      }
+    >
+      <SuccessContent />
+    </Suspense>
   );
 }
