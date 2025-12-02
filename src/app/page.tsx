@@ -10,6 +10,7 @@ import PurchaseSection from "./components/PurchaseSection";
 import SuccessCasesSection from "./components/SuccessCasesSection";
 import TestimonialsSection from "./components/TestimonialsSection";
 import TopSection from "./components/TopSection";
+import FaqSection from "./components/FaqSection";
 
 export default function Home() {
   useEffect(() => {
@@ -26,6 +27,7 @@ export default function Home() {
       <SuccessCasesSection />
       <PurchaseSection />
       <TestimonialsSection />
+      <FaqSection />
       <Footer />
     </div>
   );

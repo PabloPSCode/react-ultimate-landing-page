@@ -1164,3 +1164,56 @@ export const testimonials = [
     avatarUrl: "/profiles/profile4.png",
   },
 ];
+
+export const faqQuestions = [
+  {
+    id: "1",
+    question: "Como faço para saber se a biblioteca é compatível com o meu projeto?",
+    answer:
+      "A biblioteca é compatível com projetos React 18+, Next.js 13+ (App Router ou Pages Router) e Vite. Se você usa TailwindCSS, a integração é ainda mais simples. Basta verificar se seu ambiente está com Node 18+ ou 20+ e instalar normalmente usando `npm install ./libs/react-ultimate-components`.",
+  },
+  {
+    id: "2",
+    question: "Após a compra, como terei acesso ao download?",
+    answer:
+      "Assim que o pagamento é confirmado, você será redirecionado para a página de sucesso, onde poderá baixar imediatamente a biblioteca. Caso feche a página, pode baixar novamente clicando em “Já sou cliente” e informando seu email.",
+  },
+  {
+    id: "3",
+    question: "O pagamento é processado na hora? Posso usar a biblioteca imediatamente?",
+    answer:
+      "Sim. Para pagamentos por cartão a liberação é imediata. Para Pix e Boleto (quando disponíveis), a liberação normalmente ocorre em poucos minutos após a confirmação do pagamento.",
+  },
+  {
+    id: "4",
+    question:
+      "Fechei a página de download após a compra. Como faço para baixar a biblioteca novamente?",
+    answer:
+      "Você pode acessar a área “Já sou cliente” na landing page e informar seu email. Caso haja uma compra validada vinculada à esse email, você poderá baixar a bilioteca novamente sem custos adicionais.",
+  },
+  {
+    id: "5",
+    question: "A biblioteca recebe atualizações? Terei acesso a elas?",
+    answer:
+      "Sim. Melhorias, correções e novos componentes são disponibilizados periodicamente. Cada compra garante acesso vitalício às atualizações que ocorrerem.",
+  },
+  {
+    id: "6",
+    question: "Posso usar a biblioteca em quantos projetos quiser?",
+    answer:
+      "Sim. A licença permite uso ilimitado em projetos pessoais e comerciais do próprio comprador. O que não é permitido é redistribuir a biblioteca, revendê-la ou disponibilizá-la como open-source.",
+  },
+  {
+    id: "7",
+    question: "Como faço para personalizar as cores, tema e estilos dos componentes?",
+    answer:
+      "Todos os componentes utilizam tokens CSS e variáveis de tema. Basta copiar o conteúdo do arquivo `index.css` para seu CSS global e alterar os valores das variáveis, como `--color-primary-500` ou `--font-primary`. Se usa Tailwind, você pode sobrescrever os tokens diretamente via seu arquivo global de estilos.",
+  },
+  {
+    id: "8",
+    question: "Instalei a biblioteca mas um componente não está funcionando corretamente. O que fazer?",
+    answer:
+      "Verifique se você importou o CSS global da biblioteca corretamente e se todas as dependências externas (como react-imask, react-datepicker, e React 18+) estão instaladas. Caso o problema persista, entre em contato com o suporte técnico enviando detalhes do erro e seu ambiente.",
+  },
+];
+
