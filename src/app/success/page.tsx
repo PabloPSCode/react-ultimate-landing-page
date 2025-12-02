@@ -12,8 +12,10 @@ function SuccessContent() {
   const searchParams = useSearchParams();
   const [sessionId, setSessionId] = useState<string | null>(null);
 
-  const nextjsRepositoryLink = process.env.NEXT_PUBLIC_STABLE_REACT_NEXT_LIB_DOWNLOAD_URL;
-  const viteRepositoryLink = process.env.NEXT_PUBLIC_STABLE_REACT_VITE_LIB_DOWNLOAD_URL;
+  const nextjsRepositoryLink =
+    process.env.NEXT_PUBLIC_STABLE_REACT_NEXT_LIB_DOWNLOAD_URL;
+  const viteRepositoryLink =
+    process.env.NEXT_PUBLIC_STABLE_REACT_VITE_LIB_DOWNLOAD_URL;
   const isRecovery = searchParams?.get("recovery");
 
   useEffect(() => {
@@ -71,7 +73,7 @@ function SuccessContent() {
           disabled={!hasValidSession}
           onClick={handleDownloadNextJSPack}
         />
-        {isRecovery === "false" && (
+        {!isRecovery && (
           <Subtitle content="Obrigado por adquirir React Ultimate." />
         )}
       </div>
