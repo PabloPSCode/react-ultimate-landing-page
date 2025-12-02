@@ -42,7 +42,9 @@ export default function Header() {
                 <a
                   href={resolveHref(item.href)}
                   target={item.target}
-                  rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+                  rel={
+                    item.target === "_blank" ? "noopener noreferrer" : undefined
+                  }
                   className="text-sm sm:text-base"
                 >
                   {item.label}
@@ -55,7 +57,11 @@ export default function Header() {
       <LandingHeader.Right>
         <a
           className="w-fit rounded-md text-primary-500 font-semibold mr-8"
-          href="#adquirir-react-ultimate"
+          href={
+            pathname.includes("cliente") || pathname.includes("success")
+              ? "/#adquirir-react-ultimate"
+              : "#adquirir-react-ultimate"
+          }
         >
           Adquirir React Ultimate
         </a>
@@ -82,7 +88,9 @@ export default function Header() {
                 <a
                   href={resolveHref(item.href)}
                   target={item.target}
-                  rel={item.target === "_blank" ? "noopener noreferrer" : undefined}
+                  rel={
+                    item.target === "_blank" ? "noopener noreferrer" : undefined
+                  }
                   className="text-sm sm:text-base"
                 >
                   {item.label}
