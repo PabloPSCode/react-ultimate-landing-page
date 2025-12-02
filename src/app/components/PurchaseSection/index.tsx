@@ -57,7 +57,7 @@ export default function PurchaseSection() {
             "suporte exclusivo via Whatsapp e email;",
           ]}
           price="R$ 299,90"
-          title="Para equipes (até 5 devs)"
+          title="Para equipes (até 8 devs)"
           className="max-w-lg"
           priceNote="Pagamento único"
           buttonLabel="Adquirir React Ultimate"
