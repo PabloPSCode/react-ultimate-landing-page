@@ -97,7 +97,7 @@ export const WithImage: Story = {
     name: "Coleção Creators",
     href: "#creators",
     imgUrl:
-      "https://images.unsplash.com/photo-1518972559570-0f3a6350c8ce?q=80&w=600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400&auto=format&fit=crop",
   },
   render: (args) => (
     <div className="w-full max-w-xs">

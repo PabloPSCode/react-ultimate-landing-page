@@ -40,12 +40,12 @@ export const DefaultVisitor: Story = {
     return (
       <EcommerceHeader.Root {...args}>
         <EcommerceHeader.LeftContainer
-          logoSrc="https://dummyimage.com/96x40/ddd/333&text=Loja"
+          logoSrc="https://i.ibb.co/q342cqGy/OGImage.png"
           logoAlt="Logo"
         >
           {/* Logo já é exibido pela prop logoSrc quando mobile; em desktop, colocamos manualmente */}
           <EcommerceHeader.Logo
-            src="https://dummyimage.com/96x40/ddd/333&text=Loja"
+            src="https://i.ibb.co/q342cqGy/OGImage.png"
             alt="Logo"
           />
 

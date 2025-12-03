@@ -6,10 +6,10 @@ import FavoriteItemCard, { type Product } from "./index";
 // ===== Mock data =====
 const MOCK_PRODUCT: Product = {
   id: "p-1",
-  name: "Fone Bluetooth Noise Canceling – Série XZ Pro",
+  name: "Macbook Pro M4 16'' com Chip Apple M4 Pro, 32GB RAM, 1TB SSD – Cinza Espacial",
   price: 599.9,
   imageUrl:
-    "https://images.unsplash.com/photo-1518443895914-6d2a3c59b3a6?q=80&w=400&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=400&auto=format&fit=crop",
   shareUrl: "https://example.com/product/p-1",
 };
 
@@ -87,7 +87,7 @@ export const InteractiveList: Story = {
         name: "Camisa Tech Minimal – Azul Marinho",
         price: 129.9,
         imageUrl:
-          "https://images.unsplash.com/photo-1520975922284-8b456906c813?q=80&w=400&auto=format&fit=crop",
+          "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?q=80&w=715&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         shareUrl: "https://example.com/product/p-4",
       },
     ]);

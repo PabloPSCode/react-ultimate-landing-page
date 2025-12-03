@@ -41,7 +41,7 @@ export const Default: Story = {
         <LandingHeader.Root {...args}>
           <LandingHeader.Left>
             <LandingHeader.Logo
-              src="https://dummyimage.com/96x40/ddd/333&text=Logo"
+              src="https://i.ibb.co/q342cqGy/OGImage.png"
               alt="Logo"
             />
           </LandingHeader.Left>
@@ -114,7 +114,7 @@ export const MobileOnly: Story = {
         <LandingHeader.Root {...args}>
           <LandingHeader.Left>
             <LandingHeader.Logo
-              src="https://dummyimage.com/72x32/ddd/333&text=Logo"
+              src="https://i.ibb.co/q342cqGy/OGImage.png"
               alt="Logo"
             />
           </LandingHeader.Left>
