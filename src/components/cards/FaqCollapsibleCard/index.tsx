@@ -49,7 +49,7 @@ export default function FaqCollapsibleCard({ questions }: FaqCollapsibleCardProp
                 <span className="text-sm sm:text-base font-semibold leading-snug">
                   {question.question}
                 </span>
-                <span className="flex size-8 items-center justify-center rounded-full border border-primary-500/30 bg-primary-50 text-primary-600">
+                <span className="flex size-8 items-center justify-center rounded-full text-primary-600">
                   {isOpen ? (
                     <MinusCircleIcon size={22} weight="bold" />
                   ) : (
