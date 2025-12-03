@@ -57,8 +57,8 @@ export default function Client() {
       <Toaster />
       <Header />
       <div className="w-full max-w-7xl flex flex-1 flex-col  mx-auto py-24 px-8 gap-12">
-        <Title content="Verificação de compra" className="text-center" />
-        <Phrase content="Informe seu e-mail abaixo para verificar sua compra. Caso exista uma compra válida vinculada ao seu email o download estará disponível." />
+        <Title content="Verificação de licença" className="text-center" />
+        <Phrase content="Informe seu e-mail abaixo para verificar sua licença. Caso exista uma licença válida vinculada ao seu email, você será redirecionado para a página de download." />
         <div className="w-full flex flex-col sm:flex-row sm:items-end gap-4">
           <TextInput
             label="Informe o e-mail utilizado na compra"

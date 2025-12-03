@@ -993,7 +993,7 @@ export const menuItems = [
     href: "#cases",
   },
   {
-    label: "Já sou cliente",
+    label: "Já possuo licença",
     href: "/ja-sou-cliente",
   },
 ];
@@ -1176,7 +1176,7 @@ export const faqQuestions = [
     id: "2",
     question: "Após a compra, como terei acesso ao download?",
     answer:
-      "Assim que o pagamento é confirmado, você será redirecionado para a página de sucesso, onde poderá baixar imediatamente a biblioteca. Caso feche a página, pode baixar novamente clicando em “Já sou cliente” e informando seu email.",
+      "Assim que o pagamento é confirmado, você será redirecionado para a página de sucesso, onde poderá baixar imediatamente a biblioteca. Caso feche a página, pode baixar novamente clicando em “Já possuo licença” e informando seu email.",
   },
   {
     id: "3",
@@ -1189,7 +1189,7 @@ export const faqQuestions = [
     question:
       "Fechei a página de download após a compra. Como faço para baixar a biblioteca novamente?",
     answer:
-      "Você pode acessar a área “Já sou cliente” na landing page e informar seu email. Caso haja uma compra validada vinculada à esse email, você poderá baixar a bilioteca novamente sem custos adicionais.",
+      "Você pode acessar a área “Já possuo licença” na landing page e informar seu email. Caso haja uma compra validada vinculada à esse email, você poderá baixar a bilioteca novamente sem custos adicionais.",
   },
   {
     id: "5",
