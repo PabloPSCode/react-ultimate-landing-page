@@ -1,5 +1,5 @@
 "use client";
-import FaqCollapsibleCard from "@/components/cards/FaqCollapsibleCard";
+import { Accordeon } from "@/components/miscellaneous/Accordeon";
 import Subtitle from "@/components/typography/Subtitle";
 import Title from "@/components/typography/Title";
 import { faqQuestions } from "@/mocks";
@@ -13,7 +13,7 @@ export default function FaqSection() {
         weight="light"
         className="text-center"
       />
-      <FaqCollapsibleCard questions={faqQuestions} />
+      <Accordeon questions={faqQuestions} />
     </section>
   );
 }

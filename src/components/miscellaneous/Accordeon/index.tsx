@@ -33,7 +33,7 @@ export function Accordeon({
   className,
   itemClassName,
   showDividers = true,
-  maxWidthClassName = "max-w-3xl",
+  maxWidthClassName = "max-w-5xl",
 }: AccordeonProps) {
   /** Normaliza defaultOpen permitindo ids (string) ou índices (number) */
   const initialOpen = useMemo(() => {
