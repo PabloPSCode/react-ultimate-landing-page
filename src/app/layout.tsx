@@ -1,5 +1,20 @@
 import type { Metadata } from "next";
+import { Montserrat, Poppins } from "next/font/google";
 import "../styles/globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+  variable: "--font-primary",
+});
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["600", "700", "800", "900"],
+  display: "swap",
+  variable: "--font-secondary",
+});
 
 export const metadata: Metadata = {
   title: "React Ultimate - Biblioteca de Componentes React",
@@ -47,7 +62,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className="notranslate" translate="no">
+    <html lang="pt-BR" className={`${montserrat.variable} notranslate`} translate="no">
       <body className="antialiased">{children}</body>
     </html>
   );
