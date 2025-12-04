@@ -6,26 +6,26 @@ import CartCard from "./index";
 const MOCK_PRODUCTS: Product[] = [
   {
     id: "p-1",
-    name: "Fone Bluetooth ZX-100",
+    name: "Headphone Bluetooth ZX-100",
     price: 249.9,
     imageUrl:
-      "https://images.unsplash.com/photo-1518441902111-a9a1ccb306fb?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1545127398-14699f92334b?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     quantity: 1,
   },
   {
     id: "p-2",
-    name: "Teclado Mecânico RGB",
-    price: 399.9,
+    name: "Macbook Pro 16'' 2023",
+    price: 1399.9,
     imageUrl:
       "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop",
     quantity: 2,
   },
   {
     id: "p-3",
-    name: "Mouse Gamer 8K DPI",
+    name: "Mouse Gamer 18K DPI",
     price: 189.9,
     imageUrl:
-      "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=800&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1727417453138-7d8efdd70fb3?q=80&w=1631&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     quantity: 1,
   },
 ];
@@ -82,23 +82,3 @@ export const Empty: Story = {
   },
 };
 
-export const ManyItemsScrollable: Story = {
-  args: {
-    products: Array.from({ length: 12 }).map((_, i) => ({
-      id: `p-${i + 1}`,
-      name: `Produto ${i + 1} — descrição breve`,
-      price: 99.9 + i,
-      imageUrl:
-        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?q=80&w=800&auto=format&fit=crop",
-      quantity: (i % 3) + 1,
-    })) as Product[],
-  },
-  parameters: {
-    docs: {
-      description: {
-        story:
-          "Demonstra a área de itens com **scroll** quando a lista é longa.",
-      },
-    },
-  },
-};
