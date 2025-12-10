@@ -1,0 +1,9 @@
+:root {
+  /* Override font tokens inside Storybook so global styles keep using the intended families */
+  --font-primary: "Montserrat", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    sans-serif;
+  --font-secondary: "Poppins", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji",
+    sans-serif;
+}
