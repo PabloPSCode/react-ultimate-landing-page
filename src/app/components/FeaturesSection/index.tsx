@@ -28,7 +28,7 @@ export default function FeaturesSection() {
         <div className="w-full lg:w-2/3 flex flex-col items-center gap-4">
           <RevealContainer once>
             <Subtitle
-              content="React Ultimate é a mais completa biblioteca de componentes React do mercado brasileiro."
+              content="React Ultimate PRO é a mais completa biblioteca de componentes React do mercado brasileiro."
               className="text-center"
             />
           </RevealContainer>

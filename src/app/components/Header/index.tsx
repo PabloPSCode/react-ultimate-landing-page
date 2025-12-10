@@ -63,7 +63,7 @@ export default function Header() {
               : "#adquirir-react-ultimate"
           }
         >
-          Adquirir React Ultimate
+          Adquirir React Ultimate PRO
         </a>
         <button
           className="text-foreground"

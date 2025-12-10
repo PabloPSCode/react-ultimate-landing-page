@@ -10,7 +10,7 @@ export default function TestimonialsSection() {
     <section className="flex flex-col items-center max-w-7xl mx-auto gap-4 py-8 px-4 my-8 scroll-mt-12 sm:scroll-mt-14">
       <Title content="Depoimentos" />
       <Subtitle
-        content="Veja o depoimento de alguns desenvolvedores que utilizaram a React Ultimate para construir seus projetos."
+        content="Veja o depoimento de alguns desenvolvedores que utilizaram a React Ultimate PRO para construir seus projetos."
         weight="light"
         className="text-center"
       />

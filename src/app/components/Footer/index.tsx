@@ -42,7 +42,7 @@ export default function Footer() {
         <div className="flex flex-col items-start justify-between gap-4 sm:flex-row sm:items-center">
           <p className="text-xs text-foreground">
             React Ultimate © {currentYear}. Todos os direitos reservados.
-            Construído utilizando React Ultimate.
+            Construído utilizando React Ultimate PRO.
           </p>
           <p className="text-xs text-foreground/60">
             Desenvolvido por{" "}

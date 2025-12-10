@@ -26,7 +26,7 @@ export default function PurchaseSection() {
         threshold={0.15}
       />
       <Subtitle
-        content="Adquira React Ultimate e transforme seu desenvolvimento pagando em real, não em dólar."
+        content="Adquira React Ultimate PRO e transforme seu desenvolvimento pagando em real, não em dólar."
         className="my-4 text-center"
       />
       <div className="grid grid-cols-1 justify-center items-start gap-4 lg:grid-cols-2 mx-auto">
@@ -43,7 +43,7 @@ export default function PurchaseSection() {
           title="Para desenvolvedores"
           className="max-w-lg"
           priceNote="Pagamento único"
-          buttonLabel="Adquirir React Ultimate"
+          buttonLabel="Adquirir React Ultimate PRO"
           onPurchaseClick={() => createStripeCheckout("solo")}
         />
         <PlanCard
@@ -60,7 +60,7 @@ export default function PurchaseSection() {
           title="Para equipes (até 8 devs)"
           className="max-w-lg"
           priceNote="Pagamento único"
-          buttonLabel="Adquirir React Ultimate"
+          buttonLabel="Adquirir React Ultimate PRO"
           isBestOption
           onPurchaseClick={() => createStripeCheckout("team")}
         />

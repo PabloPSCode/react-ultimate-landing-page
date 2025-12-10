@@ -1158,7 +1158,7 @@ export const testimonials = [
   {
     id: 4,
     subtitle:
-      "Adquiri a React Ultimate para um projeto pessoal e foi a melhor decisão que tomei. A velocidade de desenvolvimento aumentou muito! A integração com o Codex foi surreal.",
+      "Adquiri a React Ultimate PRO para um projeto pessoal e foi a melhor decisão que tomei. A velocidade de desenvolvimento aumentou muito! A integração com o Codex foi surreal.",
     title: "Ludimila Ferreira",
     rating: 5,
     avatarUrl: "/profiles/profile4.png",

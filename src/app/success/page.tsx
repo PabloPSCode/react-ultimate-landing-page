@@ -74,7 +74,7 @@ function SuccessContent() {
           onClick={handleDownloadNextJSPack}
         />
         {!isRecovery && (
-          <Subtitle content="Obrigado por adquirir React Ultimate." />
+          <Subtitle content="Obrigado por adquirir React Ultimate PRO." />
         )}
       </div>
       <Footer />

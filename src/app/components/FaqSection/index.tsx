@@ -9,7 +9,7 @@ export default function FaqSection() {
     <section className="flex flex-col items-center max-w-7xl mx-auto gap-4 py-8 px-4 my-8 scroll-mt-12 sm:scroll-mt-14">
       <Title content="Perguntas Frequentes" />
       <Subtitle
-        content="Veja as respostas para as perguntas mais comuns sobre a React Ultimate."
+        content="Veja as respostas para as perguntas mais comuns sobre a React Ultimate PRO."
         weight="light"
         className="text-center"
       />

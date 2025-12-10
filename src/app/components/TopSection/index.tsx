@@ -30,7 +30,7 @@ export default function TopSection() {
             threshold={0.15}
           />
           <Subtitle
-            content="São mais de 130 componentes React extremamente úteis e prontos para uso. React Ultimate será a última biblioteca de componentes React que você vai precisar."
+            content="São mais de 130 componentes React extremamente úteis e prontos para uso. React Ultimate PRO será a última biblioteca de componentes React que você vai precisar."
             className="text-left text-gray-800"
           />
           <div className="w-full flex flex-col items-center sm:flex-row gap-4 sm:gap-8">
@@ -38,7 +38,7 @@ export default function TopSection() {
               className="w-fit rounded-md px-3 py-2 sm:px-5 sm:py-3 bg-primary-500 text-white font-semibold shadow-lg hover:bg-primary-600 transition mt-4"
               href="#adquirir-react-ultimate"
             >
-              Adquirir React Ultimate
+              Adquirir React Ultimate PRO
             </a>
             <Button
               className="w-fit min-w-50 rounded-md px-3 py-3 sm:px-5 sm:py-6 border border-primary-500 text-primary-500 font-semibold hover:bg-primary-600 hover:text-white transition mt-4"
