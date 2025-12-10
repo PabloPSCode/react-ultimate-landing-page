@@ -18,7 +18,8 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "React Ultimate - Biblioteca de Componentes React",
-  description: "Acelere seu desenvolvimento com React Ultimate, a biblioteca definitiva de componentes React para criar interfaces incríveis com facilidade e rapidez.",
+  description:
+    "Acelere seu desenvolvimento com React Ultimate, a biblioteca definitiva de componentes React para criar interfaces incríveis com facilidade e rapidez.",
   keywords: [
     "React Ultimate",
     "biblioteca de componentes React",
@@ -62,7 +63,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-BR" className={`${montserrat.variable} notranslate`} translate="no">
+    <html
+      lang="pt-BR"
+      className={`${montserrat.variable} ${poppins.variable} notranslate`}
+      translate="no"
+    >
       <body className="antialiased">{children}</body>
     </html>
   );
