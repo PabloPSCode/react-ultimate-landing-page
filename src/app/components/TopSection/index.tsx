@@ -30,7 +30,7 @@ export default function TopSection() {
             threshold={0.15}
           />
           <Subtitle
-            content="São mais de 120 componentes React extremamente úteis e prontos para uso. React Ultimate será a última biblioteca de componentes React que você vai precisar."
+            content="São mais de 130 componentes React extremamente úteis e prontos para uso. React Ultimate será a última biblioteca de componentes React que você vai precisar."
             className="text-left text-gray-800"
           />
           <div className="w-full flex flex-col items-center sm:flex-row gap-4 sm:gap-8">

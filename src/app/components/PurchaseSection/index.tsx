@@ -32,7 +32,7 @@ export default function PurchaseSection() {
       <div className="grid grid-cols-1 justify-center items-start gap-4 lg:grid-cols-2 mx-auto">
         <PlanCard
           advantages={[
-            "+120 componentes React prontos para uso;",
+            "+130 componentes React prontos para uso;",
             "responsividade automática para qualquer dispositivo;",
             "personalização completa via props e temas;",
             "suporte ao dark mode configurado;",
@@ -48,7 +48,7 @@ export default function PurchaseSection() {
         />
         <PlanCard
           advantages={[
-            "+120 componentes React prontos para uso;",
+            "+130 componentes React prontos para uso;",
             "responsividade automática para qualquer dispositivo;",
             "personalização completa via props e temas;",
             "suporte ao dark mode configurado;",

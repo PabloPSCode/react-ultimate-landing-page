@@ -1001,7 +1001,7 @@ export const menuItems = [
 export const features = [
   {
     id: "1",
-    title: "Mais de 120 componentes",
+    title: "Mais de 130 componentes",
     description:
       "Componentes extremamente versáteis e personalizáveis para todas as suas necessidades. Construa qualquer interface com uma facilidade absurda.",
     icon: <CubeIcon size={32} className="text-primary-500" />,

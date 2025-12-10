@@ -17,7 +17,7 @@ export default function MetricsSection() {
     {
       preTitle: "+ de",
       title: "componentes disponíveis",
-      value: 120,
+      value: 130,
       icon: (
         <CubeIcon className="w-12 h-12 sm:w-16 sm:h-16 text-primary-500" />
       ),
