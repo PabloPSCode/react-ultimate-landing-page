@@ -49,7 +49,6 @@ export type Currency =
   | "KES"
   | "TWD";
 
-
 export function formatBRL(value: number): string {
   return new Intl.NumberFormat("pt-BR", {
     style: "currency",
@@ -57,7 +56,7 @@ export function formatBRL(value: number): string {
   }).format(value);
 }
 
-export function formatDate(date: string) : string {
+export function formatDate(date: string): string {
   return moment.utc(date).format("DD/MM/YYYY");
 }
 
@@ -69,7 +68,11 @@ export function collapseLongString(text: string, maxLength: number): string {
   }
 }
 
-export function formatCurrency(value: number, locale: string, currency: Currency): string {
+export function formatCurrency(
+  value: number,
+  locale: string,
+  currency: Currency
+): string {
   return new Intl.NumberFormat(locale, {
     style: "currency",
     currency: currency,
@@ -95,10 +98,15 @@ export function compareDataType(a: any, b: any, dir: "asc" | "desc") {
       ? A - B
       : String(A).localeCompare(String(B), "pt-BR", { numeric: true });
   return dir === "asc" ? n : -n;
-};
-
+}
 
 export function capitalizeFirst(s: string) {
   return s.charAt(0).toUpperCase() + s.slice(1);
 }
 
+export function formatDateLong(date: string): string {
+  const inputDate = moment(date);
+
+  if (!inputDate.isValid()) return "";
+  return inputDate.locale("pt-br").format("DD [de] MMM [de] YYYY");
+}
