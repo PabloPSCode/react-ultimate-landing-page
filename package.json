@@ -13,6 +13,8 @@
   "dependencies": {
     "@gsap/react": "^2.1.2",
     "@phosphor-icons/react": "^2.1.10",
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
     "@smastrom/react-rating": "^1.5.0",
     "@storybook/react-vite": "^9.1.10",
     "@stripe/stripe-js": "^8.5.3",
@@ -55,7 +57,8 @@
     "react-verification-input": "^4.2.2",
     "recharts": "^3.2.1",
     "stripe": "^20.0.0",
-    "swiper": "^11.2.10"
+    "swiper": "^11.2.10",
+    "three": "^0.182.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.1",
