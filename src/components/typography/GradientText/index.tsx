@@ -1,13 +1,13 @@
 'use client';
 
-import React, { type JSX } from "react";
+import React from "react";
 import clsx from "clsx";
 
 export type Direction = "r" | "l" | "t" | "b" | "tr" | "tl" | "br" | "bl";
 
 export interface GradientTextProps {
   /** Elemento HTML que irá envolver o texto (ex.: h1, h2, p, span). */
-  as?: keyof JSX.IntrinsicElements;
+  as?: React.ElementType;
   /**
    * Cor inicial do gradiente (classe Tailwind).
    * Ex.: "from-emerald-500", "from-[#22c55e]"
@@ -24,7 +24,7 @@ export interface GradientTextProps {
    */
   direction?: Direction;
   /** Conteúdo do texto. */
-  content: string;
+  content: React.ReactNode;
   /** Classes adicionais para estilização (tamanhos responsivos, tracking, etc.). */
   className?: string;
 }
@@ -56,6 +56,7 @@ export default function GradientText({
   }[direction];
 
   return (
+    //@ts-ignore expecting a string literal type
     <Tag
       className={clsx(
         // gradiente aplicado ao fundo do texto
@@ -66,11 +67,10 @@ export default function GradientText({
         "bg-clip-text text-transparent inline- leading-tight",
         // tipicamente títulos usam peso maior; deixe flexível via className
         className
-      )}
+      ) as never}
     >
       {content}
     </Tag>
   );
 }
-
 
