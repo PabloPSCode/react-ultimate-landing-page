@@ -29,7 +29,7 @@ export default function Footer() {
                 alt="Logo da React Ultimate"
                 className="object-contain h-20 sm:h-24 rounded-lg"
               />
-              <span href={"/"} target="_self" className="text-sm sm:text-base">
+              <span className="text-sm sm:text-base">
                 React Ultimate Components
               </span>
             </div>
