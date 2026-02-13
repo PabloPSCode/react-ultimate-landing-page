@@ -98,6 +98,13 @@ const num = (v: any) =>
           .replace(",", ".")
       ) || 0;
 
+const normalizeText = (value: string) =>
+  String(value)
+    .normalize("NFD")
+    .replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase()
+    .trim();
+
 
 
 /* -------------------- Draggable TH -------------------- */
@@ -368,22 +375,74 @@ export default function CompleteTable({
       return next;
     });
 
+  const resolvedCountableColumns = useMemo(() => {
+    const keys = data[0] ? Object.keys(data[0]) : [];
+    const headerMapEntries = Object.entries(tableHeadersMap ?? {});
+    const labelEntries = (columnLabels ?? []).map((col) => [col.label, col.key]);
+
+    return countableColumnsName.map((col) => {
+      if (keys.includes(col.name)) {
+        return { ...col, resolvedKey: col.name };
+      }
+
+      const normalizedName = normalizeText(col.name);
+
+      const keyByNormalizedDataKey = keys.find(
+        (key) => normalizeText(key) === normalizedName
+      );
+
+      if (keyByNormalizedDataKey) {
+        return { ...col, resolvedKey: keyByNormalizedDataKey };
+      }
+
+      const keyByTableHeaderMap = headerMapEntries.find(
+        ([, label]) => normalizeText(label) === normalizedName
+      )?.[0];
+
+      if (keyByTableHeaderMap && keys.includes(keyByTableHeaderMap)) {
+        return { ...col, resolvedKey: keyByTableHeaderMap };
+      }
+
+      const keyByColumnLabel = labelEntries.find(
+        ([label]) => normalizeText(label) === normalizedName
+      )?.[1];
+
+      if (keyByColumnLabel && keys.includes(keyByColumnLabel)) {
+        return { ...col, resolvedKey: keyByColumnLabel };
+      }
+
+      return { ...col, resolvedKey: null as string | null };
+    });
+  }, [countableColumnsName, data, tableHeadersMap, columnLabels]);
+
+  const rowsForSums = useMemo(
+    () =>
+      selectedIds.size > 0
+        ? data.filter((row) => selectedIds.has(getId(row)))
+        : data,
+    [data, selectedIds, getId]
+  );
+
   // currency & sums
   const localeString =
     currency === "USD" ? "en-US" : currency === "EUR" ? "de-DE" : "pt-BR";
 
   const sums = useMemo(
     () =>
-      countableColumnsName.map((c) => {
-        const total = data
-          .filter((r) => selectedIds.has(getId(r)))
-          .reduce((acc, r) => acc + num(r[c.name]), 0);
+      resolvedCountableColumns.map((c) => {
+        const total = c.resolvedKey
+          ? rowsForSums.reduce((acc, row) => acc + num(row[c.resolvedKey!]), 0)
+          : 0;
         const value = c.isMonetary
           ? total.toLocaleString(localeString, { style: "currency", currency })
           : total.toLocaleString(localeString);
-        return { key: c.name, label: c.labelReplacer ?? c.name, value };
+        return {
+          key: `${c.name}-${c.resolvedKey ?? "unresolved"}`,
+          label: c.labelReplacer ?? c.name,
+          value,
+        };
       }),
-    [countableColumnsName, data, localeString, currency, selectedIds, getId]
+    [resolvedCountableColumns, rowsForSums, localeString, currency]
   );
 
   // filter
@@ -415,11 +474,11 @@ export default function CompleteTable({
   const moneyCols = useMemo(
     () =>
       new Set(
-        (countableColumnsName ?? [])
-          .filter((c) => c.isMonetary)
-          .map((c) => c.name)
+        resolvedCountableColumns
+          .filter((c) => c.isMonetary && c.resolvedKey)
+          .map((c) => c.resolvedKey!)
       ),
-    [countableColumnsName]
+    [resolvedCountableColumns]
   );
 
   const parseNumber = (v: any) => {
