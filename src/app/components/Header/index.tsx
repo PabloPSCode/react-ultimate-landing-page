@@ -25,46 +25,37 @@ export default function Header() {
 
   return (
     <LandingHeader.Root bordered sticky>
-      <LandingHeader.Left className="flex flex-col items-start justify-center h-full bg-background">
+      <LandingHeader.Left className="flex items-center justify-start h-full gap-3 w-fit">
         <Image
-          width={172}
+          width={50}
           height={50}
           src="/logo.png"
           alt="Logo da Symbol"
           className="object-contain h-10 sm:h-14 hover:animate-spin"
         />
+        <a href={"/"} target="_self" className="text-sm sm:text-base">
+          React Ultimate Components
+        </a>
       </LandingHeader.Left>
-      <LandingHeader.Center>
+      <LandingHeader.Center></LandingHeader.Center>
+      <LandingHeader.Right className="w-fit">
         <nav>
-          <ul>
-            {menuItems.map((item) => (
-              <li key={item.href} className="inline-block mx-2">
-                <a
-                  href={resolveHref(item.href)}
-                  target={item.target}
-                  rel={
-                    item.target === "_blank" ? "noopener noreferrer" : undefined
-                  }
-                  className="text-sm sm:text-base"
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
+          <ul className="flex items-center w-full min-w-[200px]">
+            <li>
+              <a
+                className="rounded-md bg-primary-500 p-3 text-white font-semibold mr-2 text-sm"
+                href={
+                  pathname.includes("cliente") || pathname.includes("success")
+                    ? "/#adquirir-react-ultimate"
+                    : "#adquirir-react-ultimate"
+                }
+              >
+                Quero ser PRO
+              </a>
+            </li>
           </ul>
         </nav>
-      </LandingHeader.Center>
-      <LandingHeader.Right>
-        <a
-          className="w-fit rounded-md text-primary-500 font-semibold mr-8"
-          href={
-            pathname.includes("cliente") || pathname.includes("success")
-              ? "/#adquirir-react-ultimate"
-              : "#adquirir-react-ultimate"
-          }
-        >
-          Adquirir React Ultimate PRO
-        </a>
+
         <button
           className="text-foreground"
           onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

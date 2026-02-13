@@ -21,13 +21,18 @@ export default function Footer() {
       <LandingFooter.Top columns={3}>
         <LandingFooter.Column
           children={
-            <Image
-              width={80}
-              height={80}
-              src="/logo.png"
-              alt="Logo da React Ultimate"
-              className="object-contain h-20 sm:h-24 rounded-lg"
-            />
+            <div className="flex items-center gap-4">
+              <Image
+                width={80}
+                height={80}
+                src="/logo.png"
+                alt="Logo da React Ultimate"
+                className="object-contain h-20 sm:h-24 rounded-lg"
+              />
+              <span href={"/"} target="_self" className="text-sm sm:text-base">
+                React Ultimate Components
+              </span>
+            </div>
           }
         />
         <LandingFooter.Column
